@@ -17,7 +17,16 @@ def intersection_over_union(box_preds, box_targets):
     return intersection / union
 
 if __name__ == "__main__":
-    N = 32
-    box_preds = torch.randint(0, 640, (N, 4))
-    box_targets = torch.randint(0, 640, (N, 4))
-    intersection_over_union(box_preds, box_targets)
+    box_preds = torch.tensor([
+        [20, 20, 50, 50],
+        [0, 0, 25, 25],
+        [0, 0, 50, 50],
+        ])
+    box_targets = torch.tensor([
+        [20, 20, 50, 50],
+        [20, 20, 50, 50],
+        [25, 25, 50, 50],
+        ])
+
+    iou = intersection_over_union(box_preds, box_targets)
+    print(iou)
