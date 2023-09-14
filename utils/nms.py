@@ -3,7 +3,7 @@ from iou import intersection_over_union
 
 #
 def non_maximum_suppression(
-        predictions,
+        bboxes,
         prob_threshold,
         iou_threshhold
 ):
